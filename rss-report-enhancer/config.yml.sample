@@ -1,0 +1,50 @@
+opencti:
+  url: 'http://opencti:8080'
+  token: 'ChangeMe'
+
+connector:
+  id: 'ChangeMe'
+  name: 'RSS Report Enhancer'
+  type: 'INTERNAL_ENRICHMENT'
+  scope: 'Report'
+  confidence_level: 75
+  update_existing_data: true
+  log_level: 'info'
+  expose_metrics: false
+  wait_time: 60  # 実行間隔（秒）
+  wkhtmltopdf_path: '/usr/bin/wkhtmltopdf'
+  
+  # レポート処理設定
+  # 処理対象のレポートタイプ（カンマ区切り）
+  target_report_types: 'external-import,threat-report,rss-feed,rss,rss-report'
+  # すべてのレポートを処理するか（true/false）
+  process_all_reports: true
+  # 処理済みラベル設定
+  processed_label: 'rss-enhanced'
+  # ラベルの色（16進数カラーコード）
+  processed_label_color: '#ff9900'
+  
+  # PDF生成オプション
+  # レイアウト保持設定
+  preserve_original_layout: true
+  # 画像関連設定
+  include_images_in_pdf: true
+  # PDF画像品質設定（1-100）
+  pdf_image_quality: 85
+  # 含める最大画像数
+  max_images_in_pdf: 20
+  
+  # 広告除去戦略 ("extract", "minimal", "auto")
+  # extract: コンテンツのみを抽出して新しいHTML生成
+  # minimal: 基本的な広告のみ除去し、レイアウト保持
+  # auto: HTMLの複雑さに基づいて自動選択
+  ad_removal_strategy: 'auto'
+  
+  # 起動時の全レポート処理設定
+  # 起動時に全レポートを確認・処理するか
+  process_all_on_start: false
+  # 起動時に処理する最大レポート数（0=無制限）
+  max_reports_on_start: 100
+
+  # デバッグモード（true/false）
+  debug_mode: false
