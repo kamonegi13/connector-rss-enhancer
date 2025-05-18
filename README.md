@@ -1,5 +1,6 @@
 OpenCTI RSS Report Enhancerコネクタの概要
 提供されたコードを分析すると、これはOpenCTIのRSS Report Enhancerコネクタというツールのソースコードです。このコネクタは、OpenCTIプラットフォームに取り込まれたRSSフィードやレポートを強化する機能を提供します。
+
 主な機能
 
 レポート取得: OpenCTIからレポートを自動的に取得
